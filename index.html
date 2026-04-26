@@ -13,6 +13,17 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        
+        /* Smooth transition for mobile menu */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 300px;
+            padding: 1rem 0;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -24,14 +35,26 @@
                     <div class="bg-green-500 p-2 rounded-lg">
                         <i class="fa-solid fa-coconut text-white text-xl"></i>
                     </div>
-                    <span class="text-2xl font-black tracking-tight text-green-700">BU-KO <span class="text-orange-500">NOTISMO</span></span>
+                    <span class="text-xl md:text-2xl font-black tracking-tight text-green-700">BU-KO <span class="text-orange-500">NOTISMO</span></span>
                 </div>
+                
                 <div class="hidden md:flex space-x-8 font-bold text-green-900">
                     <a href="#home" class="hover:text-green-500 transition">Home</a>
                     <a href="#about" class="hover:text-green-500 transition">About</a>
                     <a href="#menu" class="hover:text-green-500 transition">Menu</a>
                     <a href="#contact" class="hover:text-green-500 transition">Contact</a>
                 </div>
+
+                <button id="menu-btn" class="md:hidden text-green-900 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden flex flex-col space-y-4 font-bold text-green-900 border-t border-green-50">
+                <a href="#home" class="hover:text-green-500 transition px-2">Home</a>
+                <a href="#about" class="hover:text-green-500 transition px-2">About</a>
+                <a href="#menu" class="hover:text-green-500 transition px-2">Menu</a>
+                <a href="#contact" class="hover:text-green-500 transition px-2">Contact</a>
             </div>
         </div>
     </nav>
@@ -43,19 +66,19 @@
     </div>
 
     <div class="relative z-10 px-4">
-        <div class="glass p-8 md:p-16 rounded-[40px] shadow-2xl max-w-3xl">
-            <h1 class="text-6xl md:text-8xl font-black text-white mb-4 text-shadow italic">
+        <div class="glass p-6 md:p-16 rounded-[30px] md:rounded-[40px] shadow-2xl max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-8xl font-black text-white mb-4 text-shadow italic leading-tight">
                 BU-KO <span class="text-green-400">NOTISMO</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-8 text-white font-semibold tracking-wide drop-shadow-md">
+            <p class="text-lg md:text-2xl mb-8 text-white font-semibold tracking-wide drop-shadow-md">
                 NATURAL BUKO JUICE & SHAKES
                 <br><span class="text-yellow-400">Freshly Harvested. P25.00 pesos only.</span>
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#menu" class="bg-green-500 hover:bg-green-600 text-white px-12 py-5 rounded-full font-black text-xl transition-all hover:scale-105 shadow-xl">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
+                <a href="#menu" class="bg-green-500 hover:bg-green-600 text-white px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-lg md:text-xl transition-all hover:scale-105 shadow-xl">
                     VIEW MENU
                 </a>
-                <a href="#contact" class="bg-white/20 hover:bg-white/40 text-white border-2 border-white/50 px-12 py-5 rounded-full font-black text-xl transition-all">
+                <a href="#contact" class="bg-white/20 hover:bg-white/40 text-white border-2 border-white/50 px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-lg md:text-xl transition-all">
                     BULK ORDER
                 </a>
             </div>
@@ -64,25 +87,25 @@
 </section>
 
     <div class="relative z-20 -mt-10 max-w-5xl mx-auto px-4">
-        <div class="bg-green-700 rounded-2xl shadow-2xl p-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white border-t-4 border-orange-400">
+        <div class="bg-green-700 rounded-2xl shadow-2xl p-6 md:p-8 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 text-center text-white border-t-4 border-orange-400">
             <div>
-                <p class="text-4xl font-black">500+</p>
-                <p class="text-xs uppercase tracking-widest opacity-80">Cups Sold Daily</p>
+                <p class="text-3xl md:text-4xl font-black">500+</p>
+                <p class="text-[10px] md:text-xs uppercase tracking-widest opacity-80">Cups Sold Daily</p>
             </div>
-            <div class="border-y md:border-y-0 md:border-x border-green-600 py-4 md:py-0">
-                <p class="text-4xl font-black">100%</p>
-                <p class="text-xs uppercase tracking-widest opacity-80">Fresh & Natural</p>
+            <div class="border-y sm:border-y-0 sm:border-x border-green-600 py-4 sm:py-0">
+                <p class="text-3xl md:text-4xl font-black">100%</p>
+                <p class="text-[10px] md:text-xs uppercase tracking-widest opacity-80">Fresh & Natural</p>
             </div>
             <div>
-                <p class="text-4xl font-black">5</p>
-                <p class="text-xs uppercase tracking-widest opacity-80">Signature Flavors</p>
+                <p class="text-3xl md:text-4xl font-black">5</p>
+                <p class="text-[10px] md:text-xs uppercase tracking-widest opacity-80">Signature Flavors</p>
             </div>
         </div>
     </div>
 
-    <section id="about" class="py-24 bg-white">
+    <section id="about" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 <div class="p-8 border-2 border-green-50 rounded-3xl hover:border-green-500 transition-all group">
                     <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors">
                         <i class="fa-solid fa-leaf text-2xl text-green-600 group-hover:text-white"></i>
@@ -115,66 +138,66 @@
         </div>
     </section>
 
-    <section id="menu" class="py-24 bg-gray-50">
+    <section id="menu" class="py-16 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-black text-center mb-16 text-green-900">PICK YOUR REFRESHMENT</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-12 md:text-4xl md:mb-16 text-green-900 leading-tight">PICK YOUR REFRESHMENT</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             
             <div class="group bg-white rounded-[32px] overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
-                <div class="h-80 bg-gray-200 relative overflow-hidden">
+                <div class="h-64 md:h-80 bg-gray-200 relative overflow-hidden">
                     <img src="Bu-Ko Notismo/1.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <span class="absolute top-6 right-6 bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-black uppercase z-10">On-The-Go</span>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-green-800">Bottled Pure Buko</h3>
+                <div class="p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-black text-green-800">Bottled Pure Buko</h3>
                     <p class="text-gray-500 mb-6 font-medium">Perfectly chilled and ready for travel.</p>
                     <div class="flex justify-between items-center">
-                        <span class="text-3xl font-black text-orange-500">P35</span>
+                        <span class="text-2xl md:text-3xl font-black text-orange-500">P35</span>
                         <button class="bg-green-700 text-white px-6 py-2 rounded-xl font-bold hover:bg-green-800 transition">ADD</button>
                     </div>
                 </div>
             </div>
 
             <div class="group bg-white rounded-[32px] overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
-                <div class="h-80 bg-gray-200 relative overflow-hidden">
+                <div class="h-64 md:h-80 bg-gray-200 relative overflow-hidden">
                     <img src="Bu-Ko Notismo/2.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <span class="absolute top-6 right-6 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-black uppercase z-10">Student Choice</span>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-green-800">Classic Buko Cup</h3>
+                <div class="p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-black text-green-800">Classic Buko Cup</h3>
                     <p class="text-gray-500 mb-6 font-medium">Includes fresh coconut meat chunks.</p>
                     <div class="flex justify-between items-center">
-                        <span class="text-3xl font-black text-orange-500">P25</span>
+                        <span class="text-2xl md:text-3xl font-black text-orange-500">P25</span>
                         <button class="bg-green-700 text-white px-6 py-2 rounded-xl font-bold hover:bg-green-800 transition">ADD</button>
                     </div>
                 </div>
             </div>
 
             <div class="group bg-white rounded-[32px] overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
-                <div class="h-80 bg-gray-200 relative overflow-hidden">
+                <div class="h-64 md:h-80 bg-gray-200 relative overflow-hidden">
                     <img src="Bu-Ko Notismo/4.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <span class="absolute top-6 right-6 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-black uppercase z-10">Student Choice</span>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-green-800">Buko Pandan Cup</h3>
+                <div class="p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-black text-green-800">Buko Pandan Cup</h3>
                     <p class="text-gray-500 mb-6 font-medium">Includes fresh coconut meat chunks.</p>
                     <div class="flex justify-between items-center">
-                        <span class="text-3xl font-black text-orange-500">P35</span>
+                        <span class="text-2xl md:text-3xl font-black text-orange-500">P35</span>
                         <button class="bg-green-700 text-white px-6 py-2 rounded-xl font-bold hover:bg-green-800 transition">ADD</button>
                     </div>
                 </div>
             </div>
 
             <div class="group bg-white rounded-[32px] overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
-                <div class="h-80 bg-gray-200 relative overflow-hidden">
+                <div class="h-64 md:h-80 bg-gray-200 relative overflow-hidden">
                     <img src="Bu-Ko Notismo/5.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <span class="absolute top-6 right-6 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-black uppercase z-10">Student Choice</span>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-green-800">Buko Ube Cup</h3>
+                <div class="p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-black text-green-800">Buko Ube Cup</h3>
                     <p class="text-gray-500 mb-6 font-medium">Includes fresh coconut meat chunks.</p>
                     <div class="flex justify-between items-center">
-                        <span class="text-3xl font-black text-orange-500">P35</span>
+                        <span class="text-2xl md:text-3xl font-black text-orange-500">P35</span>
                         <button class="bg-green-700 text-white px-6 py-2 rounded-xl font-bold hover:bg-green-800 transition">ADD</button>
                     </div>
                 </div>
@@ -183,68 +206,69 @@
         </div>
     </div>
 </section>
-<section id="contact" class="py-24 bg-white">
+
+<section id="contact" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="bg-green-50 rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row">
+            <div class="bg-green-50 rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 
-                <div class="md:w-1/3 bg-green-700 p-12 text-white flex flex-col justify-between">
+                <div class="md:w-1/3 bg-green-700 p-8 md:p-12 text-white flex flex-col justify-between">
                     <div>
-                        <h2 class="text-4xl font-black mb-6">GET IN <span class="text-orange-400">TOUCH</span></h2>
-                        <p class="text-lg opacity-90 mb-8 font-medium">Ready for a bulk order or have a question? Drop us a message!</p>
+                        <h2 class="text-3xl md:text-4xl font-black mb-6">GET IN <span class="text-orange-400">TOUCH</span></h2>
+                        <p class="text-base md:text-lg opacity-90 mb-8 font-medium">Ready for a bulk order or have a question? Drop us a message!</p>
                         
                         <div class="space-y-6">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                                    <i class="fa-solid fa-location-dot text-xl"></i>
+                                <div class="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
                                 </div>
                                 <div>
-                                    <p class="text-xs uppercase opacity-60 font-bold">Location</p>
-                                    <p class="font-bold">Butuan City</p>
+                                    <p class="text-[10px] md:text-xs uppercase opacity-60 font-bold">Location</p>
+                                    <p class="font-bold text-sm md:text-base">Butuan City</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                                    <i class="fa-solid fa-phone text-xl"></i>
+                                <div class="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-phone text-lg"></i>
                                 </div>
                                 <div>
-                                    <p class="text-xs uppercase opacity-60 font-bold">Phone</p>
-                                    <p class="font-bold">+63 951 879 7575</p>
+                                    <p class="text-[10px] md:text-xs uppercase opacity-60 font-bold">Phone</p>
+                                    <p class="font-bold text-sm md:text-base">+63 951 879 7575</p>
                                 </div>
                             </div>
 
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                                    <i class="fa-solid fa-envelope text-xl"></i>
+                                <div class="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-envelope text-lg"></i>
                                 </div>
                                 <div>
-                                    <p class="text-xs uppercase opacity-60 font-bold">Email</p>
-                                    <p class="font-bold">lorrainemabras@gmail.com</p>
+                                    <p class="text-[10px] md:text-xs uppercase opacity-60 font-bold">Email</p>
+                                    <p class="font-bold text-sm md:text-base">lorrainemabras@gmail.com</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex gap-4 mt-12">
+                    <div class="flex gap-4 mt-10 md:mt-12">
                         <a href="https://www.facebook.com/share/1PVUCVGQbE/" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-orange-500 transition"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/shupo_shaiiii?igsh=MWNzMXVseXppbm5r" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-orange-500 transition"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@shupo_shai?_r=1&_t=ZS-95qmVGp41wo" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-orange-500 transition"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
 
-                <div class="md:w-2/3 p-12 bg-white">
-                    <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="md:w-2/3 p-8 md:p-12 bg-white">
+                    <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <div class="col-span-1">
-                            <label class="block text-sm font-black text-green-900 uppercase mb-2">Full Name</label>
-                            <input type="text" placeholder="Juan Dela Cruz" class="w-full px-6 py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-green-500 outline-none transition font-medium">
+                            <label class="block text-xs font-black text-green-900 uppercase mb-2">Full Name</label>
+                            <input type="text" placeholder="Juan Dela Cruz" class="w-full px-5 py-3 md:py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-green-500 outline-none transition font-medium">
                         </div>
                         <div class="col-span-1">
-                            <label class="block text-sm font-black text-green-900 uppercase mb-2">Email Address</label>
-                            <input type="email" placeholder="juan@example.com" class="w-full px-6 py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-green-500 outline-none transition font-medium">
+                            <label class="block text-xs font-black text-green-900 uppercase mb-2">Email Address</label>
+                            <input type="email" placeholder="juan@example.com" class="w-full px-5 py-3 md:py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-green-500 outline-none transition font-medium">
                         </div>
                         <div class="col-span-2">
-                            <label class="block text-sm font-black text-green-900 uppercase mb-2">Subject</label>
-                            <select class="w-full px-6 py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-green-500 outline-none transition font-medium appearance-none">
+                            <label class="block text-xs font-black text-green-900 uppercase mb-2">Subject</label>
+                            <select class="w-full px-5 py-3 md:py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-green-500 outline-none transition font-medium appearance-none">
                                 <option>General Inquiry</option>
                                 <option>Bulk Order (School/Event)</option>
                                 <option>Business Partnership</option>
@@ -252,11 +276,11 @@
                             </select>
                         </div>
                         <div class="col-span-2">
-                            <label class="block text-sm font-black text-green-900 uppercase mb-2">Message</label>
-                            <textarea rows="4" placeholder="How can we help you stay refreshed?" class="w-full px-6 py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-green-500 outline-none transition font-medium"></textarea>
+                            <label class="block text-xs font-black text-green-900 uppercase mb-2">Message</label>
+                            <textarea rows="4" placeholder="How can we help you stay refreshed?" class="w-full px-5 py-3 md:py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-green-500 outline-none transition font-medium"></textarea>
                         </div>
                         <div class="col-span-2">
-                            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-black py-5 rounded-2xl text-xl shadow-lg transition-all hover:scale-[1.02] active:scale-95">
+                            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-black py-4 md:py-5 rounded-2xl text-lg md:text-xl shadow-lg transition-all hover:scale-[1.02] active:scale-95">
                                 SEND MESSAGE
                             </button>
                         </div>
@@ -273,6 +297,28 @@
             <p class="opacity-60 text-sm">© 2026 Naturally Fresh. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                menuBtn.querySelector('i').classList.remove('fa-xmark');
+            });
+        });
+    </script>
 
 </body>
 </html>
